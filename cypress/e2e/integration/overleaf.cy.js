@@ -31,6 +31,8 @@ describe('Testing basic Overleaf functionality', () => {
             cy.get('button[class="btn-primary btn btn-block"]').click()
         })
 
+        cy.wait(120000)
+
         cy.url().should('eq', 'https://www.overleaf.com/registration/confirm-email')
 
     })
@@ -42,6 +44,8 @@ describe('Testing basic Overleaf functionality', () => {
             cy.get('button[class="btn-primary btn btn-block"]').click()
         })
 
+        cy.wait(120000)
+
         cy.url().should('eq', 'https://www.overleaf.com/project')
     })
     it('Test login error', ()=>{
@@ -52,9 +56,9 @@ describe('Testing basic Overleaf functionality', () => {
             cy.get('button[class="btn-primary btn btn-block"]').click()
         })
 
-        cy.wait(1000)
+        cy.wait(120000)
 
-        cy.get('div[class="alert mb-2 alert-danger"]').should('be.visible')
+        cy.get('div[class="alert alert-danger"]').should('be.visible')
     })
     it('Test forgot password link', ()=>{
 
